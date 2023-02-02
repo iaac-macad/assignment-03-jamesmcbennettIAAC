@@ -7,6 +7,7 @@ import { RhinoCompute } from 'rhinocompute'
 
 const definitionName = "hotdogjpeg.gh";
 
+
 // Set up sliders
 const length_slider = document.getElementById("length");
 length_slider.addEventListener("mouseup", onSliderChange, false);
@@ -154,7 +155,7 @@ function init() {
 
   // create a scene and a camera
   scene = new THREE.Scene();
-  scene.background = new THREE.Color( 'lavender' );
+  scene.background = new THREE.Color( "rgb(255, 212, 212)" );
   camera = new THREE.PerspectiveCamera(
     15,
     window.innerWidth / window.innerHeight,
@@ -166,8 +167,11 @@ function init() {
   camera.position.z = 30;
 
   // create the renderer and add it to the html
-  renderer = new THREE.WebGLRenderer({ antialias: true });
-  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+  //renderer.setSize(window.innerWidth, window.innerHeight);
+  // changed rendered from full screen to 1440 
+  // renderer.setSize(1440, 697);
+  renderer.setSize(window.innerWidth*0.6, window.innerHeight*0.6);
   document.body.appendChild(renderer.domElement);
 
   // add some controls to orbit the camera
@@ -201,3 +205,17 @@ function meshToThreejs(mesh, material) {
   const geometry = loader.parse(mesh.toThreejsJSON());
   return new THREE.Mesh(geometry, material);
 }
+
+
+  // Download a JPG when button Download is clicked
+  document.getElementById("download").addEventListener("click", function() {
+
+    var dataURL = renderer.domElement.toDataURL( "image/jpeg" );
+  
+    // download the image
+    var link = document.createElement( "a" );
+    link.download = "hotdog_JPEG.jpeg";
+    link.href = dataURL;
+    link.click();
+  });
+  

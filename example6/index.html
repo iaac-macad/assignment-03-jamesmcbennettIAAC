@@ -3,137 +3,55 @@
     <head>
         <meta charset="utf-8">
         <title>hotdog.jpg</title>
-        <style>
-            body { 
-                background-color: lavender;
-                margin: 0; 
-                font-family: Arial, Helvetica, sans-serif; 
-            }
-            input {
-                width: 90%;
-            }
-            .header{
-                font-size: 0.8em;
-                font-weight: 700;
-                display: grid;
-                position: relative;
-                margin-left: auto;
-                margin-right: auto;
-                width: 50%;
-                text-align: center;
-                margin-top: 40px;
-            }
-
-            .titletext{
-                font-size: 8em;
-                font-weight: bolder;
-                color: #6804aa;
-                font-style: italic;
-                text-decoration: underline;
-            }
-            #audio {
-                display: grid;
-                position: relative;
-                margin-left: auto;
-                margin-right: auto;
-                width: 100%;
-            }
-
-            #container {
-                display: grid;
-                position: relative;
-                margin-left: auto;
-                margin-right: auto;
-                width: 50%;
-                padding: 20px 20px 20px 20px;
-            }
-            #overlay {z-index: 1; width: 100%}
-
-            /* The slider itself */
-            .slider {
-            -webkit-appearance: none;  /* Override default CSS styles */
-            appearance: none;
-            width: 100%; /* Full-width */
-            height: 25px; /* Specified height */
-            background: #d3d3d3; /* Grey background */
-            outline: none; /* Remove outline */
-            opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-            -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-            transition: opacity .2s;
-            }
-
-            /* Mouse-over effects */
-            .slider:hover {
-            opacity: 1; /* Fully shown on mouse-over */
-            }
-
-            /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
-            .slider::-webkit-slider-thumb {
-            -webkit-appearance: none; /* Override default look */
-            appearance: none;
-            width: 25px; /* Set a specific slider handle width */
-            height: 25px; /* Slider handle height */
-            background: #6804aa; /* Green background */
-            cursor: pointer; /* Cursor on hover */
-            }
-
-            .slider::-moz-range-thumb {
-            width: 25px; /* Set a specific slider handle width */
-            height: 25px; /* Slider handle height */
-            background: #6804aa; /* Green background */
-            cursor: pointer; /* Cursor on hover */
-            }
-
-            #loader {
-                border: 5px solid #f3f3f3; /* Light grey */
-                border-top: 5px solid #3d3d3d; /* Grey */
-                border-radius: 50%;
-                width: 40px;
-                height: 40px;
-                animation: spin 1s linear infinite;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                z-index: 2;
-            }
-
-            @keyframes spin {
-                0% { transform: rotate(0deg); }
-                100% { transform: rotate(360deg); }
-            }
-
-        </style>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
 
-        <div class="header">
-            <audio id="audio" controls autoplay>
-                <source src="doilooklikeiknowwhatajpgis.mp3" type="audio/mpeg">
-            </audio>
-            
-            <p>Audio from <a href="https://www.youtube.com/watch?v=Ba15UbImJXw" target="_blank">"Do I look I know what a JPEG is?"</a> on YouTube. </p>
-            <div class="titletext">Hotdog</div>
-            <p>Based on an <a href="https://knowyourmeme.com/memes/do-i-look-like-i-know-what-a-jpeg-is" target="_blank">internet meme.</a> from tv show King of the Hill.</p>
-        </div>
-        <div id="loader"></div> 
-        <div id="container">
-            <div id="overlay">
-                <div>
-
-                    <input type="range" id="length" name="length" min="4" max="10" value="5" step="1" class="slider">
-                    <label for="length">Length</label>
+        <div class="section">
+            <div class="section-left">
+                <h1>Hotdog</h1>
+            </div>
+        
+            <div class="section-right">
+                <div id="loader"></div> 
+                <div id="container">
+                    <div id="overlay">
+                        <h2>Control the size and shape of the hot dog.</h2>
+                        <div>
+                            <input type="range" id="length" name="length" min="4" max="10" value="5" step="1" class="slider">
+                            <label for="length">Length</label>
+                        </div>
+                        <div>
+                            <input type="range" id="rise" name="rise" min="0" max="1" value="0.5" step="0.1" class="slider">
+                            <label for="rise">Rise</label>
+                        </div>
+                        <div>
+                            <input type="range" id="radius" name="radius" min="0.7" max="1.2" value="1" step="0.1" class="slider">
+                            <label for="radius">Radius</label>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <input type="range" id="rise" name="rise" min="0" max="1" value="0.5" step="0.1" class="slider">
-                    <label for="rise">Rise</label>
-                </div>
-                <div>
-                    <input type="range" id="radius" name="radius" min="0.7" max="1.2" value="1" step="0.1" class="slider">
-                    <label for="radius">Radius</label>
-                </div>
-
+                
             </div>
         </div>
+
+        <div class="section">
+            <div class="section-left">
+                <audio id="audio" controls autoplay>
+                    <source src="doilooklikeiknowwhatajpgis.mp3" type="audio/mpeg">
+                </audio>
+                
+                
+            </div>
+            <div class="section-right">
+                <button id="download">Download JPEG</button>
+            </div>
+            
+        </div>
+        <div class="section">
+            <p>Audio from <a href="https://www.youtube.com/watch?v=Ba15UbImJXw" target="_blank">"Do I look I know what a JPEG is?"</a> on YouTube. Bun, napkin, and pickles mesh from <a href="https://sketchfab.com/3d-models/hot-dog-f6049d197e3a42abaf446cedffbff778" target="_blank">Leon Da Kimchi on SketchFab.</a> <br></br>Project based on an <a href="https://knowyourmeme.com/memes/do-i-look-like-i-know-what-a-jpeg-is" target="_blank">internet meme</a> from tv show King of the Hill. Left click to orbit, right click to drag the hotdog.</p>
+        </div>
+        <div class="grasshopper">
             <script type="importmap">
                 {
                     "imports": {
@@ -145,5 +63,6 @@
                 }
             </script>
             <script type="module" src="script.js"></script>
+        </div>
     </body>
 </html>

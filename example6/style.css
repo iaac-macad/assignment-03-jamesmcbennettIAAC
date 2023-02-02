@@ -1,0 +1,158 @@
+body { 
+    background-color: #ffd4d4;
+    margin: 0; 
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center; 
+}
+input {
+    width: 90%;
+}
+
+h1 {
+    font-size: 7em;
+    font-weight: bolder;
+    font-style: italic;
+    text-decoration: underline;
+    background: -webkit-linear-gradient(#af6042, #c28871);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 55px;
+}
+
+.section{
+    font-size: 0.8em;
+    color: #af6042;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    text-align: center;
+    margin-top: 20px;
+    display: flex; 
+    justify-content: space-around;
+    letter-spacing: 1.5px;
+}
+
+.section-left {
+    width: 44%;
+    font-size: 12px;
+}
+
+.section-right {
+    width: 44%;
+
+}
+
+.grasshopper {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#audio {
+    display: grid;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+audio::-webkit-media-controls-panel {
+    background-color: #af6042;
+  }
+
+#container {
+    display: grid;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#overlay {z-index: 1; width: 100%}
+
+/* The slider itself */
+.slider {
+-webkit-appearance: none;  /* Override default CSS styles */
+appearance: none;
+width: 100%; /* Full-width */
+height: 25px; /* Specified height */
+background: #ffffff; /* Grey background */
+outline: none; /* Remove outline */
+opacity: 0.3; /* Set transparency (for mouse-over effects on hover) */
+-webkit-transition: .2s; /* 0.2 seconds transition on hover */
+transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+-webkit-appearance: none; /* Override default look */
+appearance: none;
+width: 25px; /* Set a specific slider handle width */
+height: 25px; /* Slider handle height */
+background: #c28871; /* Green background */
+cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+width: 25px; /* Set a specific slider handle width */
+height: 25px; /* Slider handle height */
+background: #c28871; /* Green background */
+cursor: pointer; /* Cursor on hover */
+}
+
+#loader {
+    border: 5px solid #f3f3f3; /* Light grey */
+    border-top: 5px solid #3d3d3d; /* Grey */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+canvas {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button {
+    background: linear-gradient(45deg, #af6042, #c28871);
+    margin-left:auto;
+    margin-right:auto;
+    font-size: 1.25rem;
+    padding: 1rem 2rem;
+    width: 60%;
+    line-height: 1.5rem;
+    will-change: transform, filter;
+    transition: all 0.15s ease-out;
+    cursor: pointer;
+    border-radius: 100px;
+    display: block;
+    display: block;
+    border: none;
+    color: white;
+    font-family: Inter, sans-serif;
+    filter: drop-shadow(0 15px 15px rgba(0,0,0,0.3));
+    font-variation-settings: 'wght' 600;
+    perspective-origin: 0 0;
+    letter-spacing: 0;
+}
+
+button:hover {
+transform: scale(1.04);
+}

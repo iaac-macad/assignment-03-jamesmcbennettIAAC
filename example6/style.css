@@ -14,6 +14,7 @@ h1 {
     font-style: italic;
     text-decoration: underline;
     background: -webkit-linear-gradient(#af6042, #c28871);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: 55px;

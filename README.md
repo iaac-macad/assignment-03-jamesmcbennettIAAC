@@ -10,7 +10,7 @@ These examples introduce how to use RhinoCompute as a remote geometry calculatio
 - [Example 3](example3): Local Solving GH definitions with plugin
 - [Example 4](example4): Adds objects to layers in the RhinoDoc
 - [Example 5](example5): Adds user strings from a gh file
-- [Example 6](example6): ASSIGNMENT / Do I look like know what a jpeg is?
+- [Example 6](example6): ASSIGNMENT / Do I look like I know what a jpeg is?
 
 
 

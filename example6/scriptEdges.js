@@ -5,7 +5,7 @@ import { Rhino3dmLoader } from 'three/addons/loaders/3DMLoader.js'
 import rhino3dm from 'rhino3dm'
 import { RhinoCompute } from 'rhinocompute'
 
-const definitionName = "hotdogjpeg.gh";
+const definitionName = "hotdogjpegEdges.gh";
 //const definitionName = document.getElementById("ShowMesh").checked ? "hotdogjpeg.gh" : "hotdogjpegEdges.gh";
 
 // Set up sliders

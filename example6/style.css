@@ -75,37 +75,36 @@ audio::-webkit-media-controls-panel {
 
 /* The slider itself */
 .slider {
--webkit-appearance: none;  /* Override default CSS styles */
+-webkit-appearance: none;
 appearance: none;
-width: 100%; /* Full-width */
-height: 25px; /* Specified height */
-background: #ffffff; /* Grey background */
-outline: none; /* Remove outline */
-opacity: 0.3; /* Set transparency (for mouse-over effects on hover) */
--webkit-transition: .2s; /* 0.2 seconds transition on hover */
+width: 100%;
+height: 25px;
+background: #ffffff;
+outline: none;
+opacity: 0.3;
+-webkit-transition: .2s;
 transition: opacity .2s;
 }
 
 /* Mouse-over effects */
 .slider:hover {
-opacity: 1; /* Fully shown on mouse-over */
+opacity: 1;
 }
 
-/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
 .slider::-webkit-slider-thumb {
--webkit-appearance: none; /* Override default look */
+-webkit-appearance: none;
 appearance: none;
-width: 25px; /* Set a specific slider handle width */
-height: 25px; /* Slider handle height */
-background: #c28871; /* Green background */
-cursor: pointer; /* Cursor on hover */
+width: 25px;
+height: 25px;
+background: #c28871;
+cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
-width: 25px; /* Set a specific slider handle width */
-height: 25px; /* Slider handle height */
-background: #c28871; /* Green background */
-cursor: pointer; /* Cursor on hover */
+width: 25px;
+height: 25px;
+background: #c28871;
+cursor: pointer;
 }
 
 #loader {
@@ -155,5 +154,32 @@ button {
 }
 
 button:hover {
+transform: scale(1.04);
+}
+
+#Show  {
+    background: linear-gradient(45deg, #af6042, #c28871);
+    margin-left:auto;
+    margin-right:auto;
+    font-size: 1.25rem;
+    padding: 1rem 1rem;
+    width: 120%;
+    line-height: 1.5rem;
+    will-change: transform, filter;
+    transition: all 0.15s ease-out;
+    cursor: pointer;
+    border-radius: 100px;
+    display: block;
+    display: block;
+    border: none;
+    color: white;
+    font-family: Inter, sans-serif;
+    filter: drop-shadow(0 15px 15px rgba(0,0,0,0.3));
+    font-variation-settings: 'wght' 600;
+    perspective-origin: 0 0;
+    letter-spacing: 0;
+}
+
+#Show:hover {
 transform: scale(1.04);
 }

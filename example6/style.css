@@ -107,6 +107,10 @@ background: #c28871;
 cursor: pointer;
 }
 
+.bool {
+    width: 8% !important;
+}
+
 #loader {
     border: 5px solid #f3f3f3; /* Light grey */
     border-top: 5px solid #3d3d3d; /* Grey */

@@ -21,6 +21,11 @@ const radius_slider = document.getElementById("radius");
 radius_slider.addEventListener("mouseup", onSliderChange, false);
 radius_slider.addEventListener("touchend", onSliderChange, false);
 
+const boolean_slider = document.getElementById("boolean");
+boolean_slider.addEventListener("mouseup", onSliderChange, false);
+boolean_slider.addEventListener("touchend", onSliderChange, false);
+
+
 const loader = new Rhino3dmLoader();
 loader.setLibraryPath("https://cdn.jsdelivr.net/npm/rhino3dm@0.15.0-beta/");
 
@@ -53,11 +58,17 @@ async function compute() {
   const param3 = new RhinoCompute.Grasshopper.DataTree("radius");
   param3.append([0], [radius_slider.valueAsNumber]);
 
+  const param4 = new RhinoCompute.Grasshopper.DataTree("boolean");
+  param4.append([0], [boolean_slider.valueAsNumber]);
+
   // clear values
   const trees = [];
   trees.push(param1);
   trees.push(param2);
   trees.push(param3);
+  trees.push(param4);
+
+
 
   const res = await RhinoCompute.Grasshopper.evaluateDefinition(
     definition,

@@ -47,7 +47,7 @@ rhino3dm().then(async (m) => {
 
   computeCheckbox.addEventListener("change", function() {
     if (computeCheckbox.checked) {
-      RhinoCompute.url = 'http://35.157.191.153/'
+      RhinoCompute.url = 'https://35.157.191.153/'
       RhinoCompute.apiKey = 'macad2023' 
     } else {
       RhinoCompute.url = "http://localhost:8081/";

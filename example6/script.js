@@ -34,7 +34,27 @@ rhino3dm().then(async (m) => {
   console.log("Loaded rhino3dm.");
   rhino = m; // global
 
+  //Local Computer (Turn on / off by uncommenting the line below)
   RhinoCompute.url = "http://localhost:8081/"; //if debugging locally.
+
+  //Use MaCAD server (Turn on / off by uncommenting the two lines below) **Backslash at end every important
+  //RhinoCompute.url = 'http://35.157.191.153/' // RhinoCompute server url. Use http://localhost:8081 if debugging locally.
+  //RhinoCompute.apiKey = 'macad2023'  // RhinoCompute server api key. Leave blank if debugging locally.
+
+
+  // Set default value above. If checkbox is checked, change to server. If changed again change back to local.
+  const computeCheckbox = document.getElementById("computeCheckbox");
+
+  computeCheckbox.addEventListener("change", function() {
+    if (computeCheckbox.checked) {
+      RhinoCompute.url = 'http://35.157.191.153/'
+      RhinoCompute.apiKey = 'macad2023' 
+    } else {
+      RhinoCompute.url = "http://localhost:8081/";
+    }
+    //document.getElementById("loader").style.display = "block";
+    compute();
+  });
 
   // load a grasshopper file!
 

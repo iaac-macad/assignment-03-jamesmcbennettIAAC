@@ -41,18 +41,17 @@ rhino3dm().then(async (m) => {
   //RhinoCompute.url = 'http://35.157.191.153/' // RhinoCompute server url. Use http://localhost:8081 if debugging locally.
   //RhinoCompute.apiKey = 'macad2023'  // RhinoCompute server api key. Leave blank if debugging locally.
 
+  //Set API key
+  RhinoCompute.apiKey = 'macad2023' 
 
   // Set default value above. If checkbox is checked, change to server. If changed again change back to local.
   const computeCheckbox = document.getElementById("computeCheckbox");
-
   computeCheckbox.addEventListener("change", function() {
     if (computeCheckbox.checked) {
-      RhinoCompute.url = 'https://35.157.191.153/'
-      RhinoCompute.apiKey = 'macad2023' 
+      RhinoCompute.url = 'http://35.157.191.153/'
     } else {
       RhinoCompute.url = "http://localhost:8081/";
     }
-    //document.getElementById("loader").style.display = "block";
     compute();
   });
 
